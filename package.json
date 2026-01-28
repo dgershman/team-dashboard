@@ -1,0 +1,21 @@
+{
+  "name": "team-dashboard",
+  "version": "1.0.0",
+  "description": "Team collaboration dashboard with MCP integration for automation",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev -w @team-dashboard/server",
+    "dev:client": "npm run dev -w @team-dashboard/client",
+    "build": "npm run build -w @team-dashboard/server && npm run build -w @team-dashboard/client",
+    "test": "npm run test -w @team-dashboard/server",
+    "start": "npm run start -w @team-dashboard/server"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  }
+}
